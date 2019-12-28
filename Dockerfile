@@ -7,4 +7,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["python", "./run.py"]
+ENV FLASK_APP=mock_server.py
+CMD ["flask", "run", "--host=0.0.0.0"]
