@@ -1,12 +1,14 @@
-import time
 import random
-from flask import request, jsonify
+import time
+
+from flask import jsonify
+
 from . import examples
 
 
 @examples.route('/timestamp')
 def current_time():
-    return jsonify(time=time.time())
+    return jsonify(timestamp=time.time())
 
 
 @examples.route('/random')

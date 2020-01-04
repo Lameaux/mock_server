@@ -1,6 +1,7 @@
 from flask import request, jsonify
-from . import generic
+
 from app.generic.features import sleep_seconds, override_status_code
+from . import generic
 
 
 @generic.route('/generic', methods=['GET', 'POST'])
