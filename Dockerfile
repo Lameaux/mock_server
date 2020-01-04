@@ -1,11 +1,13 @@
 FROM python:3.7
 
+ENV FLASK_APP mock_server.py
+ENV FLASK_CONFIG production
+
 WORKDIR /usr/src/app
 
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip --no-cache-dir -r requirements.txt
 
 COPY . .
 
-ENV FLASK_APP=mock_server.py
-CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["./boot.sh"]

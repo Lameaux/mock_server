@@ -1,2 +1,5 @@
+click
 Flask
-
+Flask-SSLify
+gunicorn
+python-dotenv

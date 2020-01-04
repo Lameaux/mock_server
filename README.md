@@ -12,7 +12,7 @@ FLASK_APP=mock_server.py flask run
 
 ### Generic
 ```
-/default?sleep_seconds=1&status_code=200
+/generic?sleep_seconds=1&status_code=200
 ```
 
 ### Examples
