@@ -21,4 +21,7 @@ def create_app(config_name):
     from .examples import examples as examples_blueprint
     app.register_blueprint(examples_blueprint)
 
+    from .dstvza import dstvza as dstvza_blueprint
+    app.register_blueprint(dstvza_blueprint, url_prefix='/dstvza')
+
     return app
