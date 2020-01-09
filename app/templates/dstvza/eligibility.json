@@ -1,5 +1,5 @@
 {
-  "Eligibility": "HasActiveAgreement",
+  "Eligibility": "IsEligible",
   "Links": [
     {
       "rel": "self",
