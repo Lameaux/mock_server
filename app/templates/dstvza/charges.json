@@ -1,0 +1,14 @@
+{
+  "dstvTransactionRef": "{{ dstv_transaction_ref }}",
+  "chargeToken": "{{ charge_token }}",
+  "partnerKey": "showmax",
+  "extTransactionRef": "{{ ext_transaction_ref }}",
+  "currency": "ZAR",
+  "amount": 99.0,
+  "description": "Showmax Subscription",
+  "discountDescription": null,
+  "discountAmount": 0.0,
+  "subscriptionPeriod": {
+    "months": 1
+  }
+}

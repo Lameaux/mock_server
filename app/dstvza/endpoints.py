@@ -48,6 +48,23 @@ def agreement(charge_token):
     return r, 200
 
 
+@dstvza.route('/ShowmaxExtApi/partners/showmax/agreements/<string:charge_token>/charges', methods=['get', 'post'])
+def charges(charge_token):
+    dstv_transaction_ref = str(uuid.uuid4())
+    ext_transaction_ref = str(uuid.uuid4())
+
+    r = make_response(
+        render_template(
+            'dstvza/charges.json',
+            charge_token=charge_token,
+            dstv_transaction_ref=dstv_transaction_ref,
+            ext_transaction_ref=ext_transaction_ref
+        )
+    )
+    r.headers.set('Content-Type', 'application/json')
+    return r, 200
+
+
 @dstvza.route('showmaxperformanceapi/zaf/customers/customer-detail/identityNumber=<int:identity_number>')
 def customer(identity_number):
 
@@ -79,6 +96,7 @@ def customer(identity_number):
         )
     r.headers.set('Content-Type', 'application/json')
     return r, 200
+
 
 @dstvza.route('/ShowmaxExtApi/partners/showmax/ZAF/customers/<int:customer_number>/activations', methods=['get', 'post'])
 def activations(customer_number):
