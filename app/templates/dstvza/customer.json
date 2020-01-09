@@ -1,13 +1,13 @@
 {
   "class": [ "customer" ],
-  "customerNumber": {{ customer_number }},
+  "customerNumber": "{{ customer_data['customer_number'] }}",
   "firstName": "Donald",
   "surname": "Trump",
   "title": "Mr",
   "listOfPhoneNumber": [
     {
        "code": "27",
-       "number": "{{ phone_number }}"
+       "number": "{{ customer_data['phone_number'] }}"
     }
   ],
   "listOfEmail": [ "example@example.com" ],

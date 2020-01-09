@@ -50,15 +50,19 @@ def agreement(charge_token):
 
 @dstvza.route('showmaxperformanceapi/zaf/customers/customer-detail/identityNumber=<int:identity_number>')
 def customer(identity_number):
-    customer_number = CUSTOMER_NUMBER
-    phone_number = PHONE_NUMBER
+
+    mapping = {
+        '3409045056082': {'customer_number': 38739503, 'phone_number': '827408863'},
+        '7702050146087': {'customer_number': 38752143, 'phone_number': '722528322'},
+    }
+
+    customer_data = mapping[str(identity_number)]
 
     r = make_response(
         render_template(
             'dstvza/customer.json',
-            customer_number=customer_number,
             identity_number=identity_number,
-            phone_number = phone_number
+            customer_data=customer_data
         )
     )
     r.headers.set('Content-Type', 'application/json')
@@ -82,7 +86,21 @@ def activations(customer_number):
 
 @dstvza.route('/ShowmaxExtApi/partners/showmax/ZAF/customers/<int:customer_number>/agreements/eligibility')
 def eligibility(customer_number):
-    r = make_response(render_template('dstvza/eligibility.json', customer_number=customer_number))
+
+    mapping = {
+        '38739503': 'IsEligible',
+        '38752143': 'HasActiveAgreement'
+    }
+
+    eligibility = mapping[str(customer_number)]
+
+    r = make_response(
+        render_template(
+            'dstvza/eligibility.json',
+            customer_number=customer_number,
+            eligibility=eligibility
+        )
+    )
     r.headers.set('Content-Type', 'application/json')
     return r, 200
 

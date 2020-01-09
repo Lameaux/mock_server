@@ -1,5 +1,5 @@
 {
-  "Eligibility": "IsEligible",
+  "Eligibility": "{{ eligibility }}",
   "Links": [
     {
       "rel": "self",
