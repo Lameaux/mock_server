@@ -1,0 +1,18 @@
+{
+  "class": [
+    "problem"
+  ],
+  "title": "Invalid argument values in input request",
+  "problemType": "http://api.multichoice.co.za/problems/invalid-argument-value",
+  "detail": "Customer not found",
+  "httpStatus": 404,
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "link": "http://api.multichoice.co.za/problems/invalid-argument-value"
+    }
+  ],
+  "safeToResubmit": false
+}

@@ -4,7 +4,7 @@ import uuid
 from . import dstvza
 
 CUSTOMER_NUMBER = 12345678
-PHONE_NUMBER = "123456789"
+
 
 @dstvza.route('/GetOAuthTokenAPI', methods=['get', 'post'])
 def oauth():
@@ -56,18 +56,29 @@ def customer(identity_number):
         '7702050146087': {'customer_number': 38752143, 'phone_number': '722528322'},
     }
 
-    customer_data = mapping[str(identity_number)]
+    try:
+        customer_data = mapping[str(identity_number)]
+    except KeyError:
+        customer_data = None
+
+    if customer_data is None:
+        r = make_response(
+            render_template(
+                'dstvza/customer_404.json',
+            )
+        )
+        r.headers.set('Content-Type', 'application/json')
+        return r, 404
 
     r = make_response(
-        render_template(
-            'dstvza/customer.json',
-            identity_number=identity_number,
-            customer_data=customer_data
+            render_template(
+                'dstvza/customer.json',
+                identity_number=identity_number,
+                customer_data=customer_data
+            )
         )
-    )
     r.headers.set('Content-Type', 'application/json')
     return r, 200
-
 
 @dstvza.route('/ShowmaxExtApi/partners/showmax/ZAF/customers/<int:customer_number>/activations', methods=['get', 'post'])
 def activations(customer_number):
@@ -92,7 +103,10 @@ def eligibility(customer_number):
         '38752143': 'HasActiveAgreement'
     }
 
-    eligibility = mapping[str(customer_number)]
+    try:
+        eligibility = mapping[str(customer_number)]
+    except KeyError:
+        eligibility = 'NotFound'
 
     r = make_response(
         render_template(
