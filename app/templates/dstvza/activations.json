@@ -1,0 +1,9 @@
+{
+  "activationCode":"{{ activation_code }}",
+  "links":[
+    {
+      "rel":"self",
+      "href":"http://walletintegration.za.ds.naspers.com/partners/showmax/ZAF/customers/{{ customer_number }}/{{ activation_code }}"
+    }
+  ]
+}

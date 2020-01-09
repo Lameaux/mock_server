@@ -1,0 +1,9 @@
+{
+  "Eligibility": "HasActiveAgreement",
+  "Links": [
+    {
+      "rel": "self",
+      "href": "http://walletintegration.za.ds.naspers.com/customers/{{ customer_number }}/agreements/eligibility"
+    }
+  ]
+}

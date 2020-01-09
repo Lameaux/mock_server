@@ -1,0 +1,22 @@
+{
+  "class": [ "customer" ],
+  "customerNumber": {{ customer_number }},
+  "firstName": "Donald",
+  "surname": "Trump",
+  "title": "Mr",
+  "listOfPhoneNumber": [
+    {
+       "code": "27",
+       "number": "{{ phone_number }}"
+    }
+  ],
+  "listOfEmail": [ "example@example.com" ],
+  "links": [
+    {
+      "rel": [
+        "self", "customer"
+      ],
+      "link": "/zaf/customers/customer-detail/identityNumber={{ identity_number }}"
+    }
+  ]
+}
