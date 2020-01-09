@@ -1,0 +1,26 @@
+{
+  "partnerUserProperties":{
+    "email":"drmakins@mweb.co.za",
+    "instrument_id":"placeholder",
+    "user_id":"b57660ea-3014-45a7-b269-99894988c00c"
+   },
+  "chargeToken":"pY_2DhvxFYFQsZvvPqD-LYwpcQ8BzQW-0",
+  "dstvCustomer":{
+    "Country":"zaf",
+    "CustomerNumber":"774014"
+  },
+  "partnerKey":"showmax",
+  "links":[
+    {
+      "rel":"self",
+      "href":"http://walletintegration.za.ds.naspers.com/partners/showmax/agreements/pY_2DhvxFYFQsZvvPqD-LYwpcQ8BzQW-0"
+    },
+    {
+      "rel":"partnerUserProperties",
+      "href":"http://walletintegration.za.ds.naspers.com/partners/showmax/agreements/pY_2DhvxFYFQsZvvPqD-LYwpcQ8BzQW-0/partnerUserProperties"
+    },
+    {
+      "rel":"charge","href":"http://walletintegration.za.ds.naspers.com/partners/showmax/agreements/pY_2DhvxFYFQsZvvPqD-LYwpcQ8BzQW-0/charges"
+    }
+  ]
+}
